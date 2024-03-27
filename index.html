@@ -4,10 +4,87 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Document</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Jost:ital,wght@0,100..900;1,100..900&family=Quicksand:wght@300..700&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="css/style.css">
-  <script src="js/app.js"></script>
+  <script defer src="js/app.js"></script>
 </head>
 <body>
-  
+  <div class="header-container">
+    <div class="yahtzee-header">Yahtzee!</div>
+    <div class="roll-subheading">Click the roll button to begin</div>
+  </div>
+  <div class="board-and-score-labels">
+    <div class="board-label">Playing Board</div>
+    <div class="score-label">Score Board</div>
+  </div>
+  <div class="board-container">
+    <div class="roll-container">
+      <div class="dice-container" id="dc1">
+        <div class="dice-display" id="d1"></div>
+      </div>
+      <div class="dice-container" id="dc2">
+        <div class="dice-display" id="d2"></div>
+      </div>
+      <div class="dice-container" id="dc3">
+        <div class="dice-display" id="d3"></div>
+      </div>
+      <div class="dice-container" id="dc4">
+        <div class="dice-display" id="d4"></div>
+      </div>
+      <div class="dice-container" id="dc5">
+        <div class="dice-display" id="d5"></div>
+      </div>
+    </div>
+    <div class="score-container">
+      <div class="score-text-container">
+        <div class="score-text" id="t-aces">Aces</div>
+        <div class="score-text" id="t-twos">Twos</div>
+        <div class="score-text" id="t-threes">Threes</div>
+        <div class="score-text" id="t-fours">Fours</div>
+        <div class="score-text" id="t-fives">Fives</div>
+        <div class="score-text" id="t-sixes">Sixes</div>
+        <div class="score-text" id="t-3-of-a-kind">3 Of A Kind</div>
+        <div class="score-text" id="t-4-of-a-kind">4 Of A Kind</div>
+        <div class="score-text" id="t-full-house">Full House</div>
+        <div class="score-text" id="t-sm-straight">Small Straight</div>
+        <div class="score-text" id="t-lg-straight">Large Straight</div>
+        <div class="score-text" id="t-yahtzee">Yahtzee!</div>
+        <div class="score-text" id="t-chance">Chance</div>
+        <div class="score-text" id="t-lower-total">Lower Total</div>
+        <div class="score-text" id="t-upper-total">Upper Total</div>
+      </div>
+      <div class="score-number-container">
+        <div class="score-number" id="n-aces">00</div>
+        <div class="score-number" id="n-twos">00</div>
+        <div class="score-number" id="n-threes">00</div>
+        <div class="score-number" id="n-fours">00</div>
+        <div class="score-number" id="n-fives">00</div>
+        <div class="score-number" id="n-sixes">00</div>
+        <div class="score-number" id="n-3-of-a-kind">00</div>
+        <div class="score-number" id="n-4-of-a-kind">00</div>
+        <div class="score-number" id="n-full-house">00</div>
+        <div class="score-number" id="n-sm-straight">00</div>
+        <div class="score-number" id="n-lg-straight">00</div>
+        <div class="score-number" id="n-yahtzee">00</div>
+        <div class="score-number" id="n-chance">00</div>
+        <div class="score-number" id="n-lower-total">00</div>
+        <div class="score-number" id="n-upper-total">00</div>
+      </div>
+    </div>
+  </div>
+  <div class="keepers-section-container">
+    <div class="keeper-board-container">
+      <div class="keeper-dice" id="k1"></div>
+      <div class="keeper-dice" id="k2"></div>
+      <div class="keeper-dice" id="k3"></div>
+      <div class="keeper-dice" id="k4"></div>
+      <div class="keeper-dice" id="k5"></div>
+    </div>
+    <div class="keepers-board-text">
+      <div class="yahtzee-text">Yahtzee!</div>
+    </div>
+  </div>
 </body>
 </html>
