@@ -1,3 +1,8 @@
+:root {
+  --board-red: #86342D;
+  --board-border: rgb(44, 44, 44);
+}
+
 div {
   border-color: black;
   border: 2px solid;
@@ -23,10 +28,15 @@ div {
   display: flex;
   flex-direction: row;
   justify-content: end;
+  background-color: var(--board-border);
+}
+.roll-button-and-data {
+  width:75%;
+  text-align: center;
 }
 .board-label {
   width:75%;
-  text-align: center;
+  display: flex;
 }
 .score-label {
   width:25%;
@@ -36,17 +46,37 @@ div {
   display: flex;
   flex-direction: row;
   justify-content: end;
+  background-color: var(--board-border)
 }
 .roll-container {
   display: flex;
   flex-direction: row;
   justify-content: end;
   width: 75%;
-  background-color:#86342D;
+  background-color:var(--board-red)
+}
+.dice-container {
+  border:none;
 }
 .dice-display {
   margin: 0;
   padding: 0;
+  border: none;
+}
+#dc0 {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: end;
+  width: 20%;
+  height: 45%;
+}
+#d0 {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  width: 100px;
+  height: 100px;
 }
 #dc1 {
   display: flex;
@@ -54,7 +84,7 @@ div {
   align-items: center;
   justify-content: end;
   width: 20%;
-  height: 45%;
+  height: 55%;
 }
 #d1 {
   display: flex;
@@ -69,7 +99,7 @@ div {
   align-items: center;
   justify-content: end;
   width: 20%;
-  height: 55%;
+  height: 35%;
 }
 #d2 {
   display: flex;
@@ -84,7 +114,7 @@ div {
   align-items: center;
   justify-content: end;
   width: 20%;
-  height: 35%;
+  height: 65%;
 }
 #d3 {
   display: flex;
@@ -99,24 +129,9 @@ div {
   align-items: center;
   justify-content: end;
   width: 20%;
-  height: 65%;
-}
-#d4 {
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  width: 100px;
-  height: 100px;
-}
-#dc5 {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: end;
-  width: 20%;
   height: 45%;
 }
-#d5 {
+#d4 {
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -128,26 +143,35 @@ div {
   align-items: end;
   justify-content: end;
   width: 25%;
+  background-color: var(--board-red);
 }
 .score-text-container {
   display: flex;
   align-items: center;
   flex-direction: column;
   width: 50%;
+  border: none;
 }
 .score-text {
   width:75%;
   text-align: center;
+  background-color: var(--board-border);
+  border: black;
+  color: white;
 }
 .score-number {
   width:75%;
   text-align: center;
+  background-color: var(--board-border);
+  border: black;
+  color: white;
 }
 .score-number-container {
   display: flex;
   align-items: center;
   flex-direction: column;
   width:50%;
+  border: none;
 }
 .keepers-section-container {
   display: flex;
@@ -159,6 +183,11 @@ div {
   flex-direction: row;
   justify-content: space-evenly;
   width: 50%;
+  height:150px;
+}
+#k0 {
+  height:100px;
+  width:100px;
 }
 #k1 {
   height:100px;
@@ -176,10 +205,6 @@ div {
   height:100px;
   width:100px;
 }
-#k5 {
-  height:100px;
-  width:100px;
-}
 .keepers-board-text {
   display: flex;
   align-items:center;
@@ -193,4 +218,12 @@ div {
   font-size: 70px;
   font-family: quicksand;
   font-style: italic;
+}
+.roll-button {
+  width:100%;
+  height:100%;
+}
+.keeper-dice {
+  margin: 0;
+  padding: 0;
 }
