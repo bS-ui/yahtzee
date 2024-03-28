@@ -33,6 +33,7 @@ div {
   flex-direction: row;
   justify-content: end;
   background-color: var(--board-border);
+  border-radius: 15px;
 }
 .roll-button-and-data {
   width:75%;
@@ -64,6 +65,7 @@ div {
   flex-direction: row;
   justify-content: end;
   background-color: var(--board-border);
+  border-radius: 15px;
 }
 .roll-container {
   display: flex;
@@ -201,6 +203,7 @@ div {
   display: flex;
   align-items: end;
   background-color: var(--board-border);
+  border-radius: 15px;
 }
 .keeper-board-container {
   display: flex;
