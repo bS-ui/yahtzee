@@ -1,11 +1,15 @@
 :root {
-  --board-red: #86342D;
-  --board-border: rgb(44, 44, 44);
+  --board-color: #725AC1;
+  --board-border: #242038;
+  --board-color-2: #8D86C9;
+  --board-color-3: #F7ECE1;
+  --cool-green: #61FF7E;
+  --cool-red: #D05353;
 }
-
+body {
+  background-color: #CAC4CE;
+}
 div {
-  border-color: black;
-  border: 2px solid;
   margin: 5px;
   padding: 5px
 }
@@ -37,23 +41,37 @@ div {
 .board-label {
   width:75%;
   display: flex;
+  background-color: var(--board-color);
+  border-radius: 15px;
+}
+.score-label-container {
+  width:25%;
+  background-color: var(--board-color);
+  border-radius: 15px;
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
 }
 .score-label {
-  width:25%;
   text-align: center;
+  font-size: 50px;
+  font-family: quicksand;
+  font-style: italic;
+  color: var(--board-color-3);
 }
 .board-container {
   display: flex;
   flex-direction: row;
   justify-content: end;
-  background-color: var(--board-border)
+  background-color: var(--board-border);
 }
 .roll-container {
   display: flex;
   flex-direction: row;
   justify-content: end;
   width: 75%;
-  background-color:var(--board-red)
+  background-color:var(--board-color);
+  border-radius: 15px;
 }
 .dice-container {
   border:none;
@@ -62,6 +80,7 @@ div {
   margin: 0;
   padding: 0;
   border: none;
+  border-radius: 15px;
 }
 #dc0 {
   display: flex;
@@ -143,7 +162,8 @@ div {
   align-items: end;
   justify-content: end;
   width: 25%;
-  background-color: var(--board-red);
+  background-color: var(--board-color);
+  border-radius: 15px;
 }
 .score-text-container {
   display: flex;
@@ -157,14 +177,18 @@ div {
   text-align: center;
   background-color: var(--board-border);
   border: black;
-  color: white;
+  color: var(--board-color-3);
+  font-family: quicksand;
+  border-radius: 15px;
 }
 .score-number {
   width:75%;
   text-align: center;
   background-color: var(--board-border);
   border: black;
-  color: white;
+  color: var(--board-color-3);
+  font-family: quicksand;
+  border-radius: 15px;
 }
 .score-number-container {
   display: flex;
@@ -176,6 +200,7 @@ div {
 .keepers-section-container {
   display: flex;
   align-items: end;
+  background-color: var(--board-border);
 }
 .keeper-board-container {
   display: flex;
@@ -184,6 +209,8 @@ div {
   justify-content: space-evenly;
   width: 50%;
   height:150px;
+  background-color: var(--board-color);
+  border-radius: 15px;
 }
 #k0 {
   height:100px;
@@ -210,6 +237,9 @@ div {
   align-items:center;
   flex-direction: row;
   width: 50%;
+  height:150px;
+  background-color: var(--board-color);
+  border-radius: 15px;
 }
 .yahtzee-text {
   height: 100px;
@@ -218,12 +248,36 @@ div {
   font-size: 70px;
   font-family: quicksand;
   font-style: italic;
+  color: var(--board-color-3);
+  border:none;
 }
 .roll-button {
   width:100%;
   height:100%;
+  text-align: center;
+  font-size: 50px;
+  font-family: quicksand;
+  font-style: italic;
+  color: var(--board-color-3);
+  background: var(--board-border);
+  border-radius: 15px;
+  padding: 0px;
+  margin: 0px;
+  border: none;
 }
 .keeper-dice {
   margin: 0;
   padding: 0;
+  border: 0;
+  border-radius: 15px;
+}
+.roll-count {
+  background-color: var(--board-border);
+  border-radius: 15px;
+  text-align: center;
+  font-size: 35px;
+  font-family: quicksand;
+  color: var(--board-color-3);
+  margin: 0px;
+  padding: 5px;
 }
