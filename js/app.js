@@ -30,8 +30,6 @@ function handleDiceDisplayClick(evt) {
   let clickIdx = evt.target.id.substring(1)
   if (userRoll[clickIdx] !== null) {
     keepers[clickIdx] = Number((userRoll.splice(clickIdx,1,null)))
-    console.log(userRoll)
-    console.log(keepers)
     updateDisplays()
     checkForScore()
   }
@@ -41,8 +39,6 @@ function handleKeeperDisplayClick(evt) {
   let clickIdx = evt.target.id.substring(1)
   if (keepers[clickIdx] !== null) {
     userRoll[clickIdx] = Number((keepers.splice(clickIdx,1,null)))
-    console.log(userRoll)
-    console.log(keepers)
     updateDisplays()
     checkForScore()
   }
@@ -51,7 +47,6 @@ function handleKeeperDisplayClick(evt) {
 function handleRollBtnClick() {
   if (rollCount !== 3) {
     doRoll()
-    console.log(userRoll)
     updateDisplays()
     checkForScore()
   }
@@ -93,15 +88,39 @@ updateDisplays = () => {
   rollCountEl.textContent = `Roll Count: ${rollCount}`
 }
 
-setStylingAcesThroughSixes = ((someTotal,idx) => {
-  if (someTotal >= 1) {
-    scoreTextEls[idx].style.borderColor = 'green'
-    scoreNumberEls[idx].style.borderColor = 'green'
-    scoreNumberEls[idx].textContent = `${someTotal}`
-  } else {
-    scoreTextEls[idx].style.borderColor = 'var(--cool-red)'
-    scoreNumberEls[idx].style.borderColor = 'var(--cool-red)'
-    scoreNumberEls[idx].textContent = '00'
+setStylingAcesThroughSixes = ((totals) => {
+  let idx = 0
+  for (let total in totals) {
+    if (totals[total] >= 1 && idx == 0) {
+      scoreTextEls[idx].style.borderColor = 'green'
+      scoreNumberEls[idx].style.borderColor = 'green'
+      scoreNumberEls[idx].textContent = `${totals[total]}`
+    }
+    else if (totals[total] >=1) {
+      scoreTextEls[idx].style.borderColor = 'green'
+      scoreNumberEls[idx].style.borderColor = 'green'
+      scoreNumberEls[idx].textContent = `${totals[total]*(idx+1)}`
+    } else {
+      scoreTextEls[idx].style.borderColor = 'var(--cool-red)'
+      scoreNumberEls[idx].style.borderColor = 'var(--cool-red)'
+      scoreNumberEls[idx].textContent = '00'
+    }
+    idx++
+  }
+})
+
+setStylingThreeOfAKind = ((idx,actualNumTotal,actualTotal,totals) => {
+  for (let total in totals) {
+    if (totals[total] >= 3 && actualTotal === 5) {
+      scoreTextEls[idx].style.borderColor = 'green'
+      scoreNumberEls[idx].style.borderColor = 'green'
+      scoreNumberEls[idx].textContent = `${actualNumTotal}`
+      return
+    } else {
+      scoreTextEls[idx].style.borderColor = 'var(--cool-red)'
+      scoreNumberEls[idx].style.borderColor = 'var(--cool-red)'
+      scoreNumberEls[idx].textContent = '00'
+    }
   }
 })
 
@@ -111,58 +130,31 @@ init = () => {
 }
 
 checkForScore = () => {
-  //r checking for the ones score option
-  let acesTotal = 0
+  //r setting totals to/back to 0 when function is called
+  let actualNumTotal = 0
+  let actualTotalIndex = 1
+  let actualTotal = 0
+  let totals = {acesTotal:0,twosTotal:0,threesTotal:0,foursTotal:0,fivesTotal:0,sixesTotal:0}
+  //o counting how many of each dice face is in the keepers area
   keepers.forEach((keeper) => {
-    if (keeper == 0) {
-      acesTotal += (keeper+1)
-    }
+    if (keeper == 0) totals.acesTotal += 1
+    else if (keeper == 1) totals.twosTotal += 1
+    else if (keeper == 2) totals.threesTotal += 1
+    else if (keeper == 3) totals.foursTotal += 1
+    else if (keeper == 4) totals.fivesTotal += 1
+    else if (keeper == 5) totals.sixesTotal += 1
   })
-  //o checking for the twos score option
-  let twosTotal = 0
-  keepers.forEach((keeper) => {
-    if (keeper == 1) {
-      twosTotal += (keeper+1)
-    }
-  })
-  //y checking for the threes score option
-  let threesTotal = 0
-  keepers.forEach((keeper) => {
-    if (keeper == 2) {
-      threesTotal += (keeper+1)
-    }
-  })
-  //g checking for the fours score option
-  let foursTotal = 0
-  keepers.forEach((keeper) => {
-    if (keeper == 3) {
-      foursTotal += (keeper+1)
-    }
-  })
-  //b checking for the fives score option
-  let fivesTotal = 0
-  keepers.forEach((keeper) => {
-    if (keeper == 4) {
-      fivesTotal += (keeper+1)
-    }
-  })
-  //p checking for the sixes score option
-  let sixesTotal = 0
-  keepers.forEach((keeper) => {
-    if (keeper == 5) {
-      sixesTotal += (keeper+1)
-    }
-  })
+  for (let total in totals) {
+    actualNumTotal += (totals[total]*actualTotalIndex)
+    actualTotalIndex++
+  }
+  actualTotal = Object.values(totals).reduce((a, b) => a + b, 0);
 
-  //r set styling for scoreboard if player can score in aces
-  setStylingAcesThroughSixes(acesTotal,0)
-  setStylingAcesThroughSixes(twosTotal,1)
-  setStylingAcesThroughSixes(threesTotal,2)
-  setStylingAcesThroughSixes(foursTotal,3)
-  setStylingAcesThroughSixes(fivesTotal,4)
-  setStylingAcesThroughSixes(sixesTotal,5)
+  //y set styling for scoreboard if player can score in aces
+  setStylingAcesThroughSixes(totals)
+  //y set styling for scoreboard if player can score in 3 of a kind - 1's
+  setStylingThreeOfAKind(6,actualNumTotal,actualTotal,totals)
 }
-
 //b ===============================================================================
 
 init()
