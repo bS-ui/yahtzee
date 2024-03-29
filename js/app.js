@@ -124,6 +124,21 @@ setStylingThreeOfAKind = ((idx,actualNumTotal,actualTotal,totals) => {
   }
 })
 
+setStylingFourOfAKind = ((idx,actualNumTotal,actualTotal,totals) => {
+  for (let total in totals) {
+    if (totals[total] >= 4 && actualTotal === 5) {
+      scoreTextEls[idx].style.borderColor = 'green'
+      scoreNumberEls[idx].style.borderColor = 'green'
+      scoreNumberEls[idx].textContent = `${actualNumTotal}`
+      return
+    } else {
+      scoreTextEls[idx].style.borderColor = 'var(--cool-red)'
+      scoreNumberEls[idx].style.borderColor = 'var(--cool-red)'
+      scoreNumberEls[idx].textContent = '00'
+    }
+  }
+})
+
 init = () => {
   userRoll = [null,null,null,null,null]
   rollCountEl.textContent = `Roll Count: ${rollCount}`
@@ -135,7 +150,7 @@ checkForScore = () => {
   let actualTotalIndex = 1
   let actualTotal = 0
   let totals = {acesTotal:0,twosTotal:0,threesTotal:0,foursTotal:0,fivesTotal:0,sixesTotal:0}
-  //o counting how many of each dice face is in the keepers area
+  //r counting how many of each dice face is in the keepers area
   keepers.forEach((keeper) => {
     if (keeper == 0) totals.acesTotal += 1
     else if (keeper == 1) totals.twosTotal += 1
@@ -150,10 +165,12 @@ checkForScore = () => {
   }
   actualTotal = Object.values(totals).reduce((a, b) => a + b, 0);
 
-  //y set styling for scoreboard if player can score in aces
+  //r set styling for scoreboard if player can score in aces
   setStylingAcesThroughSixes(totals)
-  //y set styling for scoreboard if player can score in 3 of a kind - 1's
+  //r set styling for scoreboard if player can score in 3 of a kind
   setStylingThreeOfAKind(6,actualNumTotal,actualTotal,totals)
+  //r set styling for scoreboard if player can score in 4 of a kind
+  setStylingFourOfAKind(7,actualNumTotal,actualTotal,totals)
 }
 //b ===============================================================================
 
