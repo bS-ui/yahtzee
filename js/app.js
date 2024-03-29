@@ -93,6 +93,18 @@ updateDisplays = () => {
   rollCountEl.textContent = `Roll Count: ${rollCount}`
 }
 
+setStylingAcesThroughSixes = ((someTotal,idx) => {
+  if (someTotal >= 1) {
+    scoreTextEls[idx].style.borderColor = 'green'
+    scoreNumberEls[idx].style.borderColor = 'green'
+    scoreNumberEls[idx].textContent = `${someTotal}`
+  } else {
+    scoreTextEls[idx].style.borderColor = 'var(--cool-red)'
+    scoreNumberEls[idx].style.borderColor = 'var(--cool-red)'
+    scoreNumberEls[idx].textContent = '00'
+  }
+})
+
 init = () => {
   userRoll = [null,null,null,null,null]
   rollCountEl.textContent = `Roll Count: ${rollCount}`
@@ -110,48 +122,45 @@ checkForScore = () => {
   let twosTotal = 0
   keepers.forEach((keeper) => {
     if (keeper == 1) {
-      total += (keeper+2)
+      twosTotal += (keeper+1)
     }
   })
   //y checking for the threes score option
   let threesTotal = 0
   keepers.forEach((keeper) => {
     if (keeper == 2) {
-      total += (keeper+3)
+      threesTotal += (keeper+1)
     }
   })
   //g checking for the fours score option
   let foursTotal = 0
   keepers.forEach((keeper) => {
     if (keeper == 3) {
-      total += (keeper+4)
+      foursTotal += (keeper+1)
     }
   })
   //b checking for the fives score option
   let fivesTotal = 0
   keepers.forEach((keeper) => {
     if (keeper == 4) {
-      total += (keeper+5)
+      fivesTotal += (keeper+1)
     }
   })
   //p checking for the sixes score option
   let sixesTotal = 0
   keepers.forEach((keeper) => {
     if (keeper == 5) {
-      total += (keeper+6)
+      sixesTotal += (keeper+1)
     }
   })
 
   //r set styling for scoreboard if player can score in aces
-  if (acesTotal >= 1) {
-    scoreTextEls[0].style.borderColor = 'green'
-    scoreNumberEls[0].style.borderColor = 'green'
-    scoreNumberEls[0].textContent = `${acesTotal}`
-  } else {
-    scoreTextEls[0].style.borderColor = 'var(--cool-red)'
-    scoreNumberEls[0].style.borderColor = 'var(--cool-red)'
-    scoreNumberEls[0].textContent = '00'
-  }
+  setStylingAcesThroughSixes(acesTotal,0)
+  setStylingAcesThroughSixes(twosTotal,1)
+  setStylingAcesThroughSixes(threesTotal,2)
+  setStylingAcesThroughSixes(foursTotal,3)
+  setStylingAcesThroughSixes(fivesTotal,4)
+  setStylingAcesThroughSixes(sixesTotal,5)
 }
 
 //b ===============================================================================
