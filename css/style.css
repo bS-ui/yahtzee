@@ -178,19 +178,23 @@ div {
   width:75%;
   text-align: center;
   background-color: var(--board-border);
-  border: black;
   color: var(--board-color-3);
   font-family: quicksand;
+  border-style: solid;
   border-radius: 15px;
+  border-width: 3px;
+  border-color: var(--cool-red);
 }
 .score-number {
   width:75%;
   text-align: center;
   background-color: var(--board-border);
-  border: black;
   color: var(--board-color-3);
   font-family: quicksand;
+  border-style: solid;
   border-radius: 15px;
+  border-width: 3px;
+  border-color: var(--cool-red);
 }
 .score-number-container {
   display: flex;
