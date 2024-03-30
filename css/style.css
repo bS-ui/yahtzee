@@ -173,7 +173,7 @@ div {
   display: flex;
   align-items: center;
   flex-direction: column;
-  width: 50%;
+  width: 33%;
   border: none;
 }
 .score-text {
@@ -202,8 +202,26 @@ div {
   display: flex;
   align-items: center;
   flex-direction: column;
-  width:50%;
+  width:33%;
   border: none;
+}
+.temp-number-container {
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  width:33%;
+  border: none;
+}
+.temp-number {
+  width:75%;
+  text-align: center;
+  background-color: var(--board-border);
+  color: var(--board-color-3);
+  font-family: quicksand;
+  border-style: solid;
+  border-radius: 15px;
+  border-width: 3px;
+  border-color: var(--cool-red);
 }
 .keepers-section-container {
   display: flex;
