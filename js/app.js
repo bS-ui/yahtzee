@@ -86,6 +86,8 @@ updateDisplays = () => {
     else keeperDisplay.style.backgroundImage = 'none'
   })
   rollCountEl.textContent = `Roll Count: ${rollCount}`
+  if (rollCount < 3) rollCountEl.style.backgroundColor = 'var(--cool-green)'
+  else rollCountEl.style.backgroundColor = 'var(--cool-red)'
 }
 
 setStylingAcesThroughSixes = ((totals) => {
@@ -139,9 +141,23 @@ setStylingFourOfAKind = ((idx,actualNumTotal,actualTotal,totals) => {
   }
 })
 
+setStylingFullHouse = ((idx,totals) => {
+  if ((totals.acesTotal == 3 || totals.twosTotal == 3 || totals.threesTotal == 3 || totals.foursTotal == 3 || totals.fivesTotal == 3 || totals.sixesTotal == 3) && (totals.acesTotal == 2 || totals.twosTotal == 2 || totals.threesTotal == 2 || totals.foursTotal == 2 || totals.fivesTotal == 2 || totals.sixesTotal == 2)) {
+    scoreTextEls[idx].style.borderColor = 'green'
+    scoreNumberEls[idx].style.borderColor = 'green'
+    scoreNumberEls[idx].textContent = `25`
+  } else {
+    scoreTextEls[idx].style.borderColor = 'var(--cool-red)'
+    scoreNumberEls[idx].style.borderColor = 'var(--cool-red)'
+    scoreNumberEls[idx].textContent = '00'
+  }
+})
+
 init = () => {
   userRoll = [null,null,null,null,null]
+  rollCount = 0
   rollCountEl.textContent = `Roll Count: ${rollCount}`
+  updateDisplays()
 }
 
 checkForScore = () => {
@@ -171,6 +187,8 @@ checkForScore = () => {
   setStylingThreeOfAKind(6,actualNumTotal,actualTotal,totals)
   //r set styling for scoreboard if player can score in 4 of a kind
   setStylingFourOfAKind(7,actualNumTotal,actualTotal,totals)
+  //r set styling for scoreboard if player can score in full house
+  setStylingFullHouse(8,totals)
 }
 //b ===============================================================================
 
