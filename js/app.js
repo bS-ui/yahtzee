@@ -153,6 +153,18 @@ setStylingFullHouse = ((idx,totals) => {
   }
 })
 
+setStylingLargeStraight = ((idx,totals) => {
+  if ((totals.acesTotal == 1 && totals.twosTotal == 1 && totals.threesTotal == 1 && totals.foursTotal == 1 && totals.fivesTotal == 1) || (totals.twosTotal == 1 && totals.threesTotal == 1 && totals.foursTotal == 1 && totals.fivesTotal == 1 && totals.sixesTotal == 1)) {
+    scoreTextEls[idx].style.borderColor = 'green'
+    scoreNumberEls[idx].style.borderColor = 'green'
+    scoreNumberEls[idx].textContent = `25`
+  } else {
+    scoreTextEls[idx].style.borderColor = 'var(--cool-red)'
+    scoreNumberEls[idx].style.borderColor = 'var(--cool-red)'
+    scoreNumberEls[idx].textContent = '00'
+  }
+})
+
 init = () => {
   userRoll = [null,null,null,null,null]
   rollCount = 0
@@ -189,6 +201,8 @@ checkForScore = () => {
   setStylingFourOfAKind(7,actualNumTotal,actualTotal,totals)
   //r set styling for scoreboard if player can score in full house
   setStylingFullHouse(8,totals)
+  //r set styling for scoreboard if player can score in large straight
+  setStylingLargeStraight(10,totals)
 }
 //b ===============================================================================
 
