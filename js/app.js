@@ -12,6 +12,7 @@ const rollCountEl = document.querySelector('.roll-count')
 const scoreTextEls = document.querySelectorAll('.score-text')
 const scoreNumberEls = document.querySelectorAll('.score-number')
 const tempScoreNumberEls = document.querySelectorAll('.temp-number')
+const resetButtonEl = document.querySelector('.reset-button')
 
 //o ===============================================================================
 
@@ -56,62 +57,71 @@ function handleRollBtnClick() {
 }
 
 function handleScore(event) {
-  if (event.target.id == 'tn-aces') {
+  if (event.target.id == 'tn-aces' && scoreNumberEls[0].style.borderColor != 'var(--cool-green)') {
     scoreNumberEls[0].textContent = tempScoreNumberEls[0].textContent
     scoreNumberEls[0].style.borderColor = 'var(--cool-green)'
+    doScoreStuff()
   }
-  else if (event.target.id == 'tn-twos') {
+  else if (event.target.id == 'tn-twos' && scoreNumberEls[1].style.borderColor != 'var(--cool-green)') {
     scoreNumberEls[1].textContent = tempScoreNumberEls[1].textContent
     scoreNumberEls[1].style.borderColor = 'var(--cool-green)'
+    doScoreStuff()
   }
-  else if (event.target.id == 'tn-threes') {
+  else if (event.target.id == 'tn-threes' && scoreNumberEls[2].style.borderColor != 'var(--cool-green)') {
     scoreNumberEls[2].textContent = tempScoreNumberEls[2].textContent
     scoreNumberEls[2].style.borderColor = 'var(--cool-green)'
+    doScoreStuff()
   }
-  else if (event.target.id == 'tn-fours') {
+  else if (event.target.id == 'tn-fours' && scoreNumberEls[3].style.borderColor != 'var(--cool-green)') {
     scoreNumberEls[3].textContent = tempScoreNumberEls[3].textContent
     scoreNumberEls[3].style.borderColor = 'var(--cool-green)'
+    doScoreStuff()
   }
-  else if (event.target.id == 'tn-fives') {
+  else if (event.target.id == 'tn-fives' && scoreNumberEls[4].style.borderColor != 'var(--cool-green)') {
     scoreNumberEls[4].textContent = tempScoreNumberEls[4].textContent
     scoreNumberEls[4].style.borderColor = 'var(--cool-green)'
+    doScoreStuff()
   }
-  else if (event.target.id == 'tn-sixes') {
+  else if (event.target.id == 'tn-sixes' && scoreNumberEls[5].style.borderColor != 'var(--cool-green)') {
     scoreNumberEls[5].textContent = tempScoreNumberEls[5].textContent
     scoreNumberEls[5].style.borderColor = 'var(--cool-green)'
+    doScoreStuff()
   }
-  else if (event.target.id == 'tn-3-of-a-kind') {
+  else if (event.target.id == 'tn-3-of-a-kind' && scoreNumberEls[6].style.borderColor != 'var(--cool-green)') {
     scoreNumberEls[6].textContent = tempScoreNumberEls[6].textContent
     scoreNumberEls[6].style.borderColor = 'var(--cool-green)'
+    doScoreStuff()
   }
-  else if (event.target.id == 'tn-4-of-a-kind') {
+  else if (event.target.id == 'tn-4-of-a-kind' && scoreNumberEls[7].style.borderColor != 'var(--cool-green)') {
     scoreNumberEls[7].textContent = tempScoreNumberEls[7].textContent
     scoreNumberEls[7].style.borderColor = 'var(--cool-green)'
+    doScoreStuff()
   }
-  else if (event.target.id == 'tn-full-house') {
+  else if (event.target.id == 'tn-full-house' && scoreNumberEls[8].style.borderColor != 'var(--cool-green)') {
     scoreNumberEls[8].textContent = tempScoreNumberEls[8].textContent
     scoreNumberEls[8].style.borderColor = 'var(--cool-green)'
+    doScoreStuff()
   }
-  else if (event.target.id == 'tn-sm-straight') {
+  else if (event.target.id == 'tn-sm-straight' && scoreNumberEls[9].style.borderColor != 'var(--cool-green)') {
     scoreNumberEls[9].textContent = tempScoreNumberEls[9].textContent
     scoreNumberEls[9].style.borderColor = 'var(--cool-green)'
+    doScoreStuff()
   }
-  else if (event.target.id == 'tn-lg-straight') {
+  else if (event.target.id == 'tn-lg-straight' && scoreNumberEls[10].style.borderColor != 'var(--cool-green)') {
     scoreNumberEls[10].textContent = tempScoreNumberEls[10].textContent
     scoreNumberEls[10].style.borderColor = 'var(--cool-green)'
+    doScoreStuff()
   }
-  else if (event.target.id == 'tn-yahtzee') {
+  else if (event.target.id == 'tn-yahtzee' && scoreNumberEls[11].style.borderColor != 'var(--cool-green)') {
     scoreNumberEls[11].textContent = tempScoreNumberEls[11].textContent
     scoreNumberEls[11].style.borderColor = 'var(--cool-green)'
+    doScoreStuff()
   }
-  else if (event.target.id == 'tn-chance') {
+  else if (event.target.id == 'tn-chance' && scoreNumberEls[12].style.borderColor != 'var(--cool-green)') {
     scoreNumberEls[12].textContent = tempScoreNumberEls[12].textContent
     scoreNumberEls[12].style.borderColor = 'var(--cool-green)'
+    doScoreStuff()
   } 
-  rollCount = 0
-  userRoll = [null,null,null,null,null]
-  keepers = [null,null,null,null,null]
-  doRoll()
 }
 
 //g ===============================================================================
@@ -154,10 +164,18 @@ updateDisplays = () => {
   else rollCountEl.style.backgroundColor = 'var(--cool-red)'
 }
 
+doScoreStuff = () => {
+  userRoll = [null,null,null,null,null]
+  keepers = [null,null,null,null,null]
+  rollCount = 0
+  updateDisplays()
+  checkForScore()
+}
+
 setStylingAcesThroughSixes = ((totals) => {
   let idx = 0
   for (let total in totals) {
-    if (totals[total] >=1 && scoreNumberEls[idx].textContent == '00') {
+    if (totals[total] >=1 && scoreNumberEls[idx].style.borderColor == 'var(--cool-red)') {
       scoreTextEls[idx].style.borderColor = 'var(--cool-green)'
       tempScoreNumberEls[idx].style.borderColor = 'var(--cool-green)'
       tempScoreNumberEls[idx].textContent = `${totals[total]*(idx+1)}`
@@ -172,7 +190,7 @@ setStylingAcesThroughSixes = ((totals) => {
 
 setStylingThreeOfAKind = ((idx,actualNumTotal,totals) => {
   for (let total in totals) {
-    if (totals[total] >= 3 && tempScoreNumberEls[idx].textContent == '00') {
+    if (totals[total] >= 3 && scoreNumberEls[idx].style.borderColor == 'var(--cool-red)') {
       scoreTextEls[idx].style.borderColor = 'var(--cool-green)'
       tempScoreNumberEls[idx].style.borderColor = 'var(--cool-green)'
       tempScoreNumberEls[idx].textContent = `${actualNumTotal}`
@@ -187,7 +205,7 @@ setStylingThreeOfAKind = ((idx,actualNumTotal,totals) => {
 
 setStylingFourOfAKind = ((idx,actualNumTotal,totals) => {
   for (let total in totals) {
-    if (totals[total] >= 4 && tempScoreNumberEls[idx].textContent == '00') {
+    if (totals[total] >= 4 && scoreNumberEls[idx].style.borderColor == 'var(--cool-red)') {
       scoreTextEls[idx].style.borderColor = 'var(--cool-green)'
       tempScoreNumberEls[idx].style.borderColor = 'var(--cool-green)'
       tempScoreNumberEls[idx].textContent = `${actualNumTotal}`
@@ -201,7 +219,7 @@ setStylingFourOfAKind = ((idx,actualNumTotal,totals) => {
 })
 
 setStylingFullHouse = ((idx,totals) => {
-  if (((totals.acesTotal == 3 || totals.twosTotal == 3 || totals.threesTotal == 3 || totals.foursTotal == 3 || totals.fivesTotal == 3 || totals.sixesTotal == 3) && (totals.acesTotal == 2 || totals.twosTotal == 2 || totals.threesTotal == 2 || totals.foursTotal == 2 || totals.fivesTotal == 2 || totals.sixesTotal == 2)) && tempScoreNumberEls[idx].textContent == '00') {
+  if (((totals.acesTotal == 3 || totals.twosTotal == 3 || totals.threesTotal == 3 || totals.foursTotal == 3 || totals.fivesTotal == 3 || totals.sixesTotal == 3) && (totals.acesTotal == 2 || totals.twosTotal == 2 || totals.threesTotal == 2 || totals.foursTotal == 2 || totals.fivesTotal == 2 || totals.sixesTotal == 2)) && scoreNumberEls[idx].style.borderColor == 'var(--cool-red)') {
     scoreTextEls[idx].style.borderColor = 'var(--cool-green)'
     tempScoreNumberEls[idx].style.borderColor = 'var(--cool-green)'
     tempScoreNumberEls[idx].textContent = `25`
@@ -213,7 +231,7 @@ setStylingFullHouse = ((idx,totals) => {
 })
 
 setStylingSmallStraight = ((idx,totals) => {
-  if (((totals.acesTotal == 1 && totals.twosTotal == 1 && totals.threesTotal == 1 && totals.foursTotal == 1) || (totals.twosTotal == 1 && totals.threesTotal == 1 && totals.foursTotal == 1 && totals.fivesTotal == 1) || (totals.threesTotal == 1 && totals.foursTotal == 1 && totals.fivesTotal == 1 && totals.sixesTotal == 1)) && scoreNumberEls[idx].textContent == '00') {
+  if (((totals.acesTotal == 1 && totals.twosTotal == 1 && totals.threesTotal == 1 && totals.foursTotal == 1) || (totals.twosTotal == 1 && totals.threesTotal == 1 && totals.foursTotal == 1 && totals.fivesTotal == 1) || (totals.threesTotal == 1 && totals.foursTotal == 1 && totals.fivesTotal == 1 && totals.sixesTotal == 1)) && scoreNumberEls[idx].style.borderColor == 'var(--cool-red)') {
     scoreTextEls[idx].style.borderColor = 'var(--cool-green)'
     tempScoreNumberEls[idx].style.borderColor = 'var(--cool-green)'
     tempScoreNumberEls[idx].textContent = `30`
@@ -225,7 +243,7 @@ setStylingSmallStraight = ((idx,totals) => {
 })
 
 setStylingLargeStraight = ((idx,totals) => {
-  if (((totals.acesTotal == 1 && totals.twosTotal == 1 && totals.threesTotal == 1 && totals.foursTotal == 1 && totals.fivesTotal == 1) || (totals.twosTotal == 1 && totals.threesTotal == 1 && totals.foursTotal == 1 && totals.fivesTotal == 1 && totals.sixesTotal == 1)) && scoreNumberEls[idx].textContent == '00') {
+  if (((totals.acesTotal == 1 && totals.twosTotal == 1 && totals.threesTotal == 1 && totals.foursTotal == 1 && totals.fivesTotal == 1) || (totals.twosTotal == 1 && totals.threesTotal == 1 && totals.foursTotal == 1 && totals.fivesTotal == 1 && totals.sixesTotal == 1)) && scoreNumberEls[idx].style.borderColor == 'var(--cool-red)') {
     scoreTextEls[idx].style.borderColor = 'var(--cool-green)'
     tempScoreNumberEls[idx].style.borderColor = 'var(--cool-green)'
     tempScoreNumberEls[idx].textContent = `40`
@@ -237,7 +255,7 @@ setStylingLargeStraight = ((idx,totals) => {
 })
 
 setStylingYahtzee = ((idx,totals) => {
-  if ((totals.acesTotal == 5 || totals.twosTotal == 5 || totals.threesTotal == 5 || totals.foursTotal == 5 || totals.fivesTotal == 5 || totals.sixesTotal == 5) && scoreNumberEls[idx].textContent == '00') {
+  if ((totals.acesTotal == 5 || totals.twosTotal == 5 || totals.threesTotal == 5 || totals.foursTotal == 5 || totals.fivesTotal == 5 || totals.sixesTotal == 5) && scoreNumberEls[idx].style.borderColor == 'var(--cool-red)') {
     scoreTextEls[idx].style.borderColor = 'var(--cool-green)'
     tempScoreNumberEls[idx].style.borderColor = 'var(--cool-green)'
     tempScoreNumberEls[idx].textContent = `50`
@@ -253,6 +271,13 @@ init = () => {
   keepers = [null,null,null,null,null]
   rollCount = 0
   rollCountEl.textContent = `Roll Count: ${rollCount}`
+  scoreTextEls.forEach(score => {
+    score.style.borderColor = 'var(--cool-red)'
+  })
+  scoreNumberEls.forEach(number => {
+    number.style.borderColor = 'var(--cool-red)'
+    number.textContent = '00'
+  })
   updateDisplays()
 }
 
