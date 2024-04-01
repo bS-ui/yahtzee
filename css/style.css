@@ -47,7 +47,7 @@ div {
   border-radius: 15px;
 }
 .score-label-container {
-  width:25%;
+  width:40%;
   background-color: var(--board-color);
   border-radius: 15px;
   display: flex;
@@ -161,13 +161,34 @@ div {
   width: 100px;
   height: 100px;
 }
+.category-titles {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+}
 .score-container {
   display: flex;
-  align-items: end;
-  justify-content: end;
-  width: 25%;
+  flex-direction: column;
+  justify-content: center;
   background-color: var(--board-color);
   border-radius: 15px;
+  width: 40%
+}
+.title {
+  text-align: center;
+  background-color: var(--board-border);
+  color: var(--board-color-3);
+  font-family: quicksand;
+  border-style: solid;
+  border-radius: 15px;
+  border-width: 3px;
+  border-color: var(--cool-red);
+  width:33%
+}
+.score-data {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
 }
 .score-text-container {
   display: flex;
@@ -309,4 +330,40 @@ div {
   color: var(--board-color-3);
   margin: 0px;
   padding: 5px;
+}
+.reset-button-and-highscore {
+  display: flex;
+  align-items: end;
+  background-color: var(--board-border);
+  border-radius: 15px;
+}
+.reset-button {
+  width:50%;
+  height:100%;
+  text-align: center;
+  font-size: 50px;
+  font-family: quicksand;
+  font-style: italic;
+  color: var(--board-color-3);
+  background: var(--cool-red);
+  border-radius: 15px;
+  padding: 0px;
+  margin: 0px;
+  border: none;
+  margin: 5px
+}
+.high-score-display {
+  width:50%;
+  height:100%;
+  text-align: center;
+  font-size: 50px;
+  font-family: quicksand;
+  font-style: italic;
+  color: var(--board-color-3);
+  background: var(--board-color);
+  border-radius: 15px;
+  padding: 0px;
+  margin: 0px;
+  border: none;
+  margin: 5px 
 }

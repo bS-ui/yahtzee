@@ -32,6 +32,8 @@ tempScoreNumberEls.forEach(score => {
   score.addEventListener('click', handleScore)
 })
 
+resetButtonEl.addEventListener('click', handleResetBtnClick)
+
 //y ===============================================================================
 
 function handleDiceDisplayClick(evt) {
@@ -129,6 +131,10 @@ function handleScore(event) {
     scoreNumberEls[12].style.borderColor = 'var(--cool-green)'
     doScoreStuff()
   } 
+}
+
+function handleResetBtnClick() {
+  init()
 }
 
 //g ===============================================================================
@@ -281,6 +287,7 @@ init = () => {
   rollCount = 0
   score = 0
   turn = 1
+  turnStatusEl.textContent = "Click the 'Roll Dice' button to begin!"
   rollCountEl.textContent = `Roll Count: ${rollCount}`
   scoreTextEls.forEach(score => {
     score.style.borderColor = 'var(--cool-red)'
