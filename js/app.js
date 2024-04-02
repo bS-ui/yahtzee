@@ -5,6 +5,8 @@ let upperscore = 0
 let lowerscore = 0
 let totalscore = 0
 let turn = 0
+localStorage.setItem("highscoreVal", 0)
+let highscore = localStorage.getItem("highscoreVal")
 
 //r ===============================================================================
 
@@ -20,6 +22,7 @@ const turnStatusEl = document.querySelector('.roll-subheading')
 const totalScoreEl = document.querySelector('#n-total')
 const upperScoreEl = document.querySelector('#n-upper-total')
 const lowerScoreEl = document.querySelector('#n-lower-total')
+const highScoreDisplayEl = document.querySelector('.high-score-display')
 
 //o ===============================================================================
 
@@ -209,13 +212,29 @@ doScoreStuff = () => {
   if (totalScoreEl.textContent != 0) {
     totalScoreEl.style.borderColor = 'var(--cool-green)'
   }
-  userRoll = [null,null,null,null,null]
-  keepers = [null,null,null,null,null]
-  rollCount = 0
-  turn++
-  turnStatusEl.textContent = `Turn ${turn}`
-  updateDisplays()
-  checkForScore()
+  if (turn == 13) {
+    userRoll = [null,null,null,null,null]
+    keepers = [null,null,null,null,null]
+    updateDisplays()
+    if (totalscore > highscore) {
+      localStorage.setItem("highscoreVal", totalscore)
+      highScoreDisplayEl.textContent = `High Score: ${totalscore}`
+      turnStatusEl.textContent = "Congratulations! You beat your high score!"
+      // add confetti here
+      // play congratulations sound here
+    } else {
+      turnStatusEl.textContent = `Your final score was: ${totalscore}. Great Job!`
+      // play congratulations sound here but no confetti because not epic win
+    }
+  } else {
+    userRoll = [null,null,null,null,null]
+    keepers = [null,null,null,null,null]
+    rollCount = 0
+    turn++
+    turnStatusEl.textContent = `Turn ${turn}`
+    updateDisplays()
+    checkForScore()
+  }
 }
 
 setStylingAcesThroughSixes = ((totals) => {
@@ -313,6 +332,8 @@ setStylingYahtzee = ((idx,totals) => {
 })
 
 init = () => {
+  //stop confetti here
+  highScoreDisplayEl.textContent = `High Score: ${highscore}`
   userRoll = [null,null,null,null,null]
   keepers = [null,null,null,null,null]
   rollCount = 0
