@@ -6,6 +6,7 @@ let lowerscore = 0
 let totalscore = 0
 let turn = 0
 let highscore = localStorage.getItem("highscoreVal")
+colorStatus = 0
 
 //r ===============================================================================
 
@@ -22,6 +23,8 @@ const totalScoreEl = document.querySelector('#n-total')
 const upperScoreEl = document.querySelector('#n-upper-total')
 const lowerScoreEl = document.querySelector('#n-lower-total')
 const highScoreDisplayEl = document.querySelector('.high-score-display')
+const colorChangerButtonEl = document.querySelector('.yahtzee-header')
+const root = document.querySelector(':root')
 
 //o ===============================================================================
 
@@ -40,6 +43,8 @@ tempScoreNumberEls.forEach(score => {
 })
 
 resetButtonEl.addEventListener('click', handleResetBtnClick)
+
+colorChangerButtonEl.addEventListener('click', handleColorChanging)
 
 //y ===============================================================================
 
@@ -142,6 +147,14 @@ function handleScore(event) {
 
 function handleResetBtnClick() {
   init()
+}
+
+function handleColorChanging() {
+  root.style.setProperty('--board-border', '#0E1116')
+  root.style.setProperty('--board-color', '#7C7C7C')
+  root.style.setProperty('--board-color-2', '#595959')
+  root.style.setProperty('--board-color-3', '#EDF2EF')
+  colorStatus = 0
 }
 
 //g ===============================================================================
