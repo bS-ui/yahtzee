@@ -1,7 +1,9 @@
 let userRoll = [];
 let keepers = [];
 let rollCount = 1
-let score = 0
+let upperscore = 0
+let lowerscore = 0
+let totalscore = 0
 let turn = 0
 
 //r ===============================================================================
@@ -15,6 +17,9 @@ const scoreNumberEls = document.querySelectorAll('.score-number')
 const tempScoreNumberEls = document.querySelectorAll('.temp-number')
 const resetButtonEl = document.querySelector('.reset-button')
 const turnStatusEl = document.querySelector('.roll-subheading')
+const totalScoreEl = document.querySelector('#n-total')
+const upperScoreEl = document.querySelector('#n-upper-total')
+const lowerScoreEl = document.querySelector('#n-lower-total')
 
 //o ===============================================================================
 
@@ -178,6 +183,30 @@ updateDisplays = () => {
 }
 
 doScoreStuff = () => {
+  totalscore = 0
+  upperscore = 0
+  lowerscore = 0
+  for (let i = 0; i < 13; i++) {
+    totalscore += Number(scoreNumberEls[i].textContent)
+  }
+  for (let i = 0; i < 6; i++) {
+    upperscore += Number(scoreNumberEls[i].textContent)
+  }
+  for (let i = 6; i < 13; i++) {
+    lowerscore += Number(scoreNumberEls[i].textContent)
+  }
+  lowerScoreEl.textContent = lowerscore
+  if (lowerScoreEl.textContent != 0) {
+    lowerScoreEl.style.borderColor = 'var(--cool-green)'
+  }
+  upperScoreEl.textContent = upperscore
+  if (upperScoreEl.textContent != 0) {
+    upperScoreEl.style.borderColor = 'var(--cool-green)'
+  }
+  totalScoreEl.textContent = totalscore
+  if (totalScoreEl.textContent != 0) {
+    totalScoreEl.style.borderColor = 'var(--cool-green)'
+  }
   userRoll = [null,null,null,null,null]
   keepers = [null,null,null,null,null]
   rollCount = 0
@@ -197,7 +226,7 @@ setStylingAcesThroughSixes = ((totals) => {
     } else {
       scoreTextEls[idx].style.borderColor = 'var(--cool-red)'
       tempScoreNumberEls[idx].style.borderColor = 'var(--cool-red)'
-      tempScoreNumberEls[idx].textContent = '00'
+      tempScoreNumberEls[idx].textContent = '0'
     }
     idx++
   }
@@ -213,7 +242,7 @@ setStylingThreeOfAKind = ((idx,actualNumTotal,totals) => {
     } else {
       scoreTextEls[idx].style.borderColor = 'var(--cool-red)'
       tempScoreNumberEls[idx].style.borderColor = 'var(--cool-red)'
-      tempScoreNumberEls[idx].textContent = '00'
+      tempScoreNumberEls[idx].textContent = '0'
     }
   }
 })
@@ -228,7 +257,7 @@ setStylingFourOfAKind = ((idx,actualNumTotal,totals) => {
     } else {
       scoreTextEls[idx].style.borderColor = 'var(--cool-red)'
       tempScoreNumberEls[idx].style.borderColor = 'var(--cool-red)'
-      tempScoreNumberEls[idx].textContent = '00'
+      tempScoreNumberEls[idx].textContent = '0'
     }
   }
 })
@@ -241,7 +270,7 @@ setStylingFullHouse = ((idx,totals) => {
   } else {
     scoreTextEls[idx].style.borderColor = 'var(--cool-red)'
     tempScoreNumberEls[idx].style.borderColor = 'var(--cool-red)'
-    tempScoreNumberEls[idx].textContent = '00'
+    tempScoreNumberEls[idx].textContent = '0'
   }
 })
 
@@ -253,7 +282,7 @@ setStylingSmallStraight = ((idx,totals) => {
   } else {
     scoreTextEls[idx].style.borderColor = 'var(--cool-red)'
     tempScoreNumberEls[idx].style.borderColor = 'var(--cool-red)'
-    tempScoreNumberEls[idx].textContent = '00'
+    tempScoreNumberEls[idx].textContent = '0'
   }
 })
 
@@ -265,7 +294,7 @@ setStylingLargeStraight = ((idx,totals) => {
   } else {
     scoreTextEls[idx].style.borderColor = 'var(--cool-red)'
     tempScoreNumberEls[idx].style.borderColor = 'var(--cool-red)'
-    tempScoreNumberEls[idx].textContent = '00'
+    tempScoreNumberEls[idx].textContent = '0'
   }
 })
 
@@ -277,7 +306,7 @@ setStylingYahtzee = ((idx,totals) => {
   } else {
     scoreTextEls[idx].style.borderColor = 'var(--cool-red)'
     tempScoreNumberEls[idx].style.borderColor = 'var(--cool-red)'
-    tempScoreNumberEls[idx].textContent = '00'
+    tempScoreNumberEls[idx].textContent = '0'
   }
 })
 
@@ -285,7 +314,9 @@ init = () => {
   userRoll = [null,null,null,null,null]
   keepers = [null,null,null,null,null]
   rollCount = 0
-  score = 0
+  upperscore = 0
+  lowerscore = 0
+  totalscore = 0
   turn = 1
   turnStatusEl.textContent = "Click the 'Roll Dice' button to begin!"
   rollCountEl.textContent = `Roll Count: ${rollCount}`
@@ -294,7 +325,7 @@ init = () => {
   })
   scoreNumberEls.forEach(number => {
     number.style.borderColor = 'var(--cool-red)'
-    number.textContent = '00'
+    number.textContent = '0'
   })
   updateDisplays()
 }

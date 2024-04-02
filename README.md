@@ -16,7 +16,7 @@ Click [link coming soon](link coming soon) here to play the game!
 
 ### Motivation/Insipration:
 
-Yahtzee has always been one of those games my family throws onto the table when we have a gathering and it's a blast every time. Besides the game being just genuinely enjoyable to play and see those scores add up at the end of the game, I thought it would be a good test of my currently programming skills to see if I can properly implement all of the funky scoring combinations and rules Yahtzee has to offer! 
+Yahtzee has always been one of those games my family throws onto the table when we have a gathering and it's a blast every time. Besides the game being just genuinely enjoyable to play and see those scores add up at the end of the game, I thought it would be a good test of my current programming skills to see if I can properly implement all of the funky scoring combinations and rules Yahtzee has to offer! 
 
 ### Technologies Used:
 
@@ -27,7 +27,7 @@ Yahtzee has always been one of those games my family throws onto the table when 
 
 ### Credits:
 
-* [Coolors](https://coolors.co/) For really nifty Color Palettes!  
+* [Coolors](https://coolors.co/) For really nifty Color Palettes! (Affiliate Link: *wink wink* [Coolors](https://coolors.co/?ref=660a03d754a759000bebf5e6))
 * [HeroPatterns](https://heropatterns.com/) For even niftier designs to use those color palettes on!
 
 ### To-Dos and Goals:
