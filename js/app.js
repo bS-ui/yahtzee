@@ -145,6 +145,7 @@ function handleResetBtnClick() {
 //g ===============================================================================
 
 doRoll = () => {
+  if (rollCount < 3) {
   userRoll.forEach((roll,idx) => {
     if (rollCount > 0 && userRoll[idx] !== null) {
       userRoll[idx] = Math.floor(Math.random() * 6)
@@ -156,6 +157,7 @@ doRoll = () => {
   rollCount += 1
   checkForScore()
   updateDisplays()
+  }
 }
 
 updateDisplays = () => {
