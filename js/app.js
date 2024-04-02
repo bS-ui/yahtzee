@@ -5,7 +5,6 @@ let upperscore = 0
 let lowerscore = 0
 let totalscore = 0
 let turn = 0
-localStorage.setItem("highscoreVal", 0)
 let highscore = localStorage.getItem("highscoreVal")
 
 //r ===============================================================================
