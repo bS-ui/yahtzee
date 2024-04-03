@@ -34,9 +34,6 @@ Yahtzee has always been one of those games my family throws onto the table when 
 
 #### To-Do:
 
-* Add a reset button
-* Add a high score field where the highest score stored on local storage is displayed
-* Add a Favicon
 * Add a "?" icon somewhere that gives details on possible scoring combinations
 
 #### Goals:
