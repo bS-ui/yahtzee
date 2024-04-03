@@ -40,6 +40,4 @@ Yahtzee has always been one of those games my family throws onto the table when 
 #### Goals:
 
 * Add two other user-pickable color themes
-* Add confetti when the user scores above their current highscore
 * Add animations for dice rolling
-* Add sounds for dice rolling, dice moving, scoring, not being able to score, etc.
