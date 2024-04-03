@@ -29,7 +29,7 @@ Yahtzee has always been one of those games my family throws onto the table when 
 
 * [Coolors](https://coolors.co/) For really nifty Color Palettes! (Affiliate Link: *wink wink* [Coolors](https://coolors.co/?ref=660a03d754a759000bebf5e6))
 * [HeroPatterns](https://heropatterns.com/) For even niftier designs to use those color palettes on!
-* [Confetti]()
+* [Confetti](https://github.com/SEI-Remote/confetti) For the easiest to use confetti to ever be made in JS!
 
 ### To-Dos and Goals:
 
