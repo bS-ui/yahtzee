@@ -5,6 +5,7 @@ let upperscore = 0
 let lowerscore = 0
 let totalscore = 0
 let turn = 0
+let highscore
 
 //r ===============================================================================
 
@@ -236,7 +237,7 @@ doScoreStuff = () => {
       game_complete.play()
     } else {
       turnStatusEl.textContent = `Your final score was: ${totalscore}. Great Job!`
-      game_complete.volume(.05)
+      game_complete.volume = .05
       game_complete.play()
     }
   } else {
@@ -347,11 +348,11 @@ setStylingYahtzee = ((idx,totals) => {
 })
 
 init = () => {
+  highscore = localStorage.getItem("highscoreVal")
   confetti.stop()
-  let highscore = localStorage.getItem("highscoreVal")
-  highScoreDisplayEl.textContent = `High Score: ${highscore}`
   tempScoreNumberEls[12].style.borderColor = 'var(--cool-red)'
   tempScoreNumberEls[12].textContent = 0
+  highScoreDisplayEl.textContent = `High Score: ${highscore}`
   userRoll = [null,null,null,null,null]
   keepers = [null,null,null,null,null]
   rollCount = 0
