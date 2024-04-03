@@ -6,7 +6,6 @@ let lowerscore = 0
 let totalscore = 0
 let turn = 0
 let highscore = localStorage.getItem("highscoreVal")
-colorStatus = 0
 
 //r ===============================================================================
 
@@ -43,8 +42,6 @@ tempScoreNumberEls.forEach(score => {
 })
 
 resetButtonEl.addEventListener('click', handleResetBtnClick)
-
-colorChangerButtonEl.addEventListener('click', handleColorChanging)
 
 //y ===============================================================================
 
@@ -147,14 +144,6 @@ function handleScore(event) {
 
 function handleResetBtnClick() {
   init()
-}
-
-function handleColorChanging() {
-  root.style.setProperty('--board-border', '#0E1116')
-  root.style.setProperty('--board-color', '#7C7C7C')
-  root.style.setProperty('--board-color-2', '#595959')
-  root.style.setProperty('--board-color-3', '#EDF2EF')
-  colorStatus = 0
 }
 
 //g ===============================================================================
@@ -403,6 +392,14 @@ checkForScore = () => {
   setStylingLargeStraight(10,totals)
   //r set styling for scoreboard if player can score yahtzee
   setStylingYahtzee(11,totals)
+  //r set styling for scoreboard if player can score chance
+  if (scoreNumberEls[12].style.borderColor == 'var(--cool-red)') {
+    tempScoreNumberEls[12].style.borderColor = 'var(--cool-green)'
+    tempScoreNumberEls[12].textContent = actualNumTotal
+  } else {
+    tempScoreNumberEls[12].style.borderColor = 'var(--cool-red)'
+    tempScoreNumberEls[12].textContent = 0
+  }
 }
 //b ===============================================================================
 

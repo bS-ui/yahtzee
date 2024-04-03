@@ -1,4 +1,4 @@
-![image coming soon](image coming soon)
+![Game Image](https://i.imgur.com/VegypDj.png)
 
 # **Yahtzee!**
 
@@ -12,7 +12,7 @@ On your turn, you have three opportunities to roll the dice to score the highest
 
 ### Gameplay:
 
-Click [link coming soon](link coming soon) here to play the game!
+Click [Yahtzee-JS!](https://yahtzee-js.surge.sh/) here to play the game!
 
 ### Motivation/Insipration:
 

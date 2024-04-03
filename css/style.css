@@ -207,6 +207,7 @@ div {
   border-radius: 15px;
   border-width: 3px;
   border-color: var(--cool-red);
+  font-size: 15px
 }
 .score-number {
   width:75%;
@@ -218,6 +219,7 @@ div {
   border-radius: 15px;
   border-width: 3px;
   border-color: var(--cool-red);
+  font-size: 15px
 }
 .score-number-container {
   display: flex;
@@ -243,6 +245,7 @@ div {
   border-radius: 15px;
   border-width: 3px;
   border-color: var(--cool-red);
+  font-size: 15px
 }
 .keepers-section-container {
   display: flex;
