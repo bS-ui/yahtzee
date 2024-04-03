@@ -25,6 +25,11 @@ const highScoreDisplayEl = document.querySelector('.high-score-display')
 const colorChangerButtonEl = document.querySelector('.yahtzee-header')
 const root = document.querySelector(':root')
 
+const score = new Audio('../assets/audio/score.mp3')
+const move = new Audio('../assets/audio/move.mp3')
+const game_complete = new Audio('../assets/audio/game_complete.mp3')
+const dice_roll = new Audio('../assets/audio/dice_roll.mp3')
+
 //o ===============================================================================
 
 diceDisplayEl.forEach(diceDisplay => {
@@ -49,6 +54,8 @@ function handleDiceDisplayClick(evt) {
   let clickIdx = evt.target.id.substring(1)
   if (userRoll[clickIdx] !== null) {
     keepers[clickIdx] = Number((userRoll.splice(clickIdx,1,null)))
+    move.volume = .05
+    move.play()
     updateDisplays()
     checkForScore()
   }
@@ -58,6 +65,8 @@ function handleKeeperDisplayClick(evt) {
   let clickIdx = evt.target.id.substring(1)
   if (keepers[clickIdx] !== null) {
     userRoll[clickIdx] = Number((keepers.splice(clickIdx,1,null)))
+    move.volume = .05
+    move.play()
     updateDisplays()
     checkForScore()
   }
@@ -159,6 +168,8 @@ doRoll = () => {
     }
   })
   rollCount += 1
+  dice_roll.volume = .05
+  dice_roll.play()
   checkForScore()
   updateDisplays()
   }
@@ -222,12 +233,16 @@ doScoreStuff = () => {
       highScoreDisplayEl.textContent = `High Score: ${totalscore}`
       turnStatusEl.textContent = "Congratulations! You beat your high score!"
       confetti.start()
-      // play congratulations sound here
+      game_complete.volume = .05
+      game_complete.play()
     } else {
       turnStatusEl.textContent = `Your final score was: ${totalscore}. Great Job!`
-      // play congratulations sound here but no confetti because not epic win
+      game_complete.volume(.05)
+      game_complete.play()
     }
   } else {
+    score.volume = .05
+    score.play()
     userRoll = [null,null,null,null,null]
     keepers = [null,null,null,null,null]
     rollCount = 0
@@ -395,7 +410,7 @@ checkForScore = () => {
   //r set styling for scoreboard if player can score yahtzee
   setStylingYahtzee(11,totals)
   //r set styling for scoreboard if player can score chance
-  if (scoreNumberEls[12].style.borderColor == 'var(--cool-red)') {
+  if (scoreNumberEls[12].style.borderColor == 'var(--cool-red)' && actualNumTotal != 0) {
     tempScoreNumberEls[12].style.borderColor = 'var(--cool-green)'
     tempScoreNumberEls[12].textContent = actualNumTotal
   } else {
