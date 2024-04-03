@@ -221,7 +221,7 @@ doScoreStuff = () => {
       localStorage.setItem("highscoreVal", totalscore)
       highScoreDisplayEl.textContent = `High Score: ${totalscore}`
       turnStatusEl.textContent = "Congratulations! You beat your high score!"
-      // add confetti here
+      confetti.start()
       // play congratulations sound here
     } else {
       turnStatusEl.textContent = `Your final score was: ${totalscore}. Great Job!`
@@ -333,7 +333,9 @@ setStylingYahtzee = ((idx,totals) => {
 })
 
 init = () => {
-  //stop confetti here
+  confetti.stop()
+  tempScoreNumberEls[12].style.borderColor = 'var(--cool-red)'
+  tempScoreNumberEls[12].textContent = 0
   highScoreDisplayEl.textContent = `High Score: ${highscore}`
   userRoll = [null,null,null,null,null]
   keepers = [null,null,null,null,null]
