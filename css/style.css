@@ -11,8 +11,8 @@ body {
   background-color: #dabfff;
 }
 div {
-  margin: 5px;
-  padding: 5px
+  margin: 3px;
+  padding: 3px
 }
 .header-container {
   display: flex;
@@ -22,12 +22,12 @@ div {
 }
 .yahtzee-header {
   font-family: quicksand;
-  font-size: 70px;
+  font-size: 50px;
   font-weight: bold;
 }
 .roll-subheading {
   font-family: quicksand;
-  font-size: 30px;
+  font-size: 20px;
 }
 .board-and-score-labels {
   display: flex;
@@ -56,9 +56,8 @@ div {
 }
 .score-label {
   text-align: center;
-  font-size: 50px;
+  font-size: 35px;
   font-family: quicksand;
-  font-style: italic;
   color: var(--board-color-3);
 }
 .board-container {
@@ -300,7 +299,6 @@ div {
   text-align: center;
   font-size: 70px;
   font-family: quicksand;
-  font-style: italic;
   color: var(--board-color-3);
   border:none;
 }
@@ -308,9 +306,8 @@ div {
   width:100%;
   height:100%;
   text-align: center;
-  font-size: 50px;
+  font-size: 35px;
   font-family: quicksand;
-  font-style: italic;
   color: var(--board-color-3);
   background: var(--board-border);
   border-radius: 15px;
@@ -328,7 +325,7 @@ div {
   background-color: var(--board-border);
   border-radius: 15px;
   text-align: center;
-  font-size: 35px;
+  font-size: 25px;
   font-family: quicksand;
   color: var(--board-border);
   margin: 0px;
@@ -344,29 +341,25 @@ div {
   width:50%;
   height:100%;
   text-align: center;
-  font-size: 50px;
+  font-size: 35px;
   font-family: quicksand;
-  font-style: italic;
   color: var(--board-color-3);
   background: var(--cool-red);
   border-radius: 15px;
   padding: 0px;
-  margin: 0px;
   border: none;
-  margin: 5px
+  margin: 3px
 }
 .high-score-display {
   width:50%;
   height:100%;
   text-align: center;
-  font-size: 50px;
+  font-size: 35px;
   font-family: quicksand;
-  font-style: italic;
   color: var(--board-color-3);
   background: var(--board-color-2);
   border-radius: 15px;
   padding: 0px;
-  margin: 0px;
   border: none;
-  margin: 5px 
+  margin: 3px 
 }

@@ -5,7 +5,6 @@ let upperscore = 0
 let lowerscore = 0
 let totalscore = 0
 let turn = 0
-let highscore = localStorage.getItem("highscoreVal")
 
 //r ===============================================================================
 
@@ -349,9 +348,10 @@ setStylingYahtzee = ((idx,totals) => {
 
 init = () => {
   confetti.stop()
+  let highscore = localStorage.getItem("highscoreVal")
+  highScoreDisplayEl.textContent = `High Score: ${highscore}`
   tempScoreNumberEls[12].style.borderColor = 'var(--cool-red)'
   tempScoreNumberEls[12].textContent = 0
-  highScoreDisplayEl.textContent = `High Score: ${highscore}`
   userRoll = [null,null,null,null,null]
   keepers = [null,null,null,null,null]
   rollCount = 0
