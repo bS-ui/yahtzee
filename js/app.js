@@ -244,6 +244,8 @@ updateDisplays = () => {
     else if (userRoll[idx] == '4') diceDisplay.style.backgroundImage = "url('./assets/images/dice5.png')"
     else if (userRoll[idx] == '5') diceDisplay.style.backgroundImage = "url('./assets/images/dice6.png')"
     else diceDisplay.style.backgroundImage = 'none'
+    if (diceDisplay.style.backgroundImage != 'none') diceDisplay.style.boxShadow = '10px 10px'
+    else diceDisplay.style.boxShadow = '0px 0px'
   })
   keeperDisplayEl.forEach((keeperDisplay,idx) => {
     if (keepers[idx] == '0') keeperDisplay.style.backgroundImage = "url('./assets/images/dice1.png')"
@@ -253,6 +255,8 @@ updateDisplays = () => {
     else if (keepers[idx] == '4') keeperDisplay.style.backgroundImage = "url('./assets/images/dice5.png')"
     else if (keepers[idx] == '5') keeperDisplay.style.backgroundImage = "url('./assets/images/dice6.png')"
     else keeperDisplay.style.backgroundImage = 'none'
+    if (keeperDisplay.style.backgroundImage != 'none') keeperDisplay.style.boxShadow = '10px 10px'
+    else keeperDisplay.style.boxShadow = '0px 0px'
   })
   rollCountEl.textContent = `Roll Count: ${rollCount}`
   if (rollCount < 3) rollCountEl.style.backgroundColor = 'var(--cool-green)'
