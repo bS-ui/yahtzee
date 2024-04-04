@@ -35,9 +35,12 @@ Yahtzee has always been one of those games my family throws onto the table when 
 
 #### To-Do:
 
+* Add multiple yahtzee bonus (+100 per)
+* Add joker rules multiple yahtzees
+* Fix small straight not showing up in temp score if only 4 dice are in the keepers section
 * Add a "?" icon somewhere that gives details on possible scoring combinations
 
 #### Goals:
 
-* Add two other user-pickable color themes
+* Add ROYGBIV user-pickable color themes using every letter in the Yahtzee title
 * Add animations for dice rolling
