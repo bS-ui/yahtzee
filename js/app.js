@@ -353,8 +353,6 @@ init = () => {
   tempScoreNumberEls[12].style.borderColor = 'var(--cool-red)'
   tempScoreNumberEls[12].textContent = 0
   highScoreDisplayEl.textContent = `High Score: ${highscore}`
-  userRoll = [null,null,null,null,null]
-  keepers = [null,null,null,null,null]
   rollCount = 0
   upperscore = 0
   lowerscore = 0
@@ -362,6 +360,8 @@ init = () => {
   turn = 1
   turnStatusEl.textContent = "Click the 'Roll Dice' button to begin!"
   rollCountEl.textContent = `Roll Count: ${rollCount}`
+  userRoll = [null,null,null,null,null]
+  keepers = [null,null,null,null,null]
   scoreTextEls.forEach(score => {
     score.style.borderColor = 'var(--cool-red)'
   })
@@ -369,6 +369,7 @@ init = () => {
     number.style.borderColor = 'var(--cool-red)'
     number.textContent = '0'
   })
+  checkForScore()
   updateDisplays()
 }
 
