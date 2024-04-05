@@ -10,6 +10,8 @@ On your turn, you have three opportunities to roll the dice to score the highest
 
 #### Scoring Combinations:
 
+After a specific combination is surrounded in green, you can score that combination by clicking the number under "Pre-Score".
+
 ![Rules for Aces-Sixes Scoring](https://i.imgur.com/tOLqp22.png)  
 ![Rules for 3&4OfAKind, Full House, Straights, and Yahtzee](https://i.imgur.com/pHe5FXg.png)
 
