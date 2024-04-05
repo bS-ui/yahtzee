@@ -387,7 +387,6 @@ checkForScore = () => {
       scoreTextEls[6].style.borderColor = 'var(--cool-green)'
       tempScoreNumberEls[6].style.borderColor = 'var(--cool-green)'
       tempScoreNumberEls[6].textContent = `${actualNumTotal}`
-      return
     } else {
       scoreTextEls[6].style.borderColor = 'var(--cool-red)'
       tempScoreNumberEls[6].style.borderColor = 'var(--cool-red)'
@@ -400,7 +399,6 @@ checkForScore = () => {
       scoreTextEls[7].style.borderColor = 'var(--cool-green)'
       tempScoreNumberEls[7].style.borderColor = 'var(--cool-green)'
       tempScoreNumberEls[7].textContent = `${actualNumTotal}`
-      return
     } else {
       scoreTextEls[7].style.borderColor = 'var(--cool-red)'
       tempScoreNumberEls[7].style.borderColor = 'var(--cool-red)'
