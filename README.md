@@ -1,4 +1,4 @@
-![Game Image](https://i.imgur.com/VegypDj.png)
+![Game Image](https://i.imgur.com/wlsLrOw.png)
 
 # **Yahtzee!**
 
@@ -8,11 +8,18 @@ A dice game invented by an anonymous Canadian couple to play aboard their yacht 
 
 On your turn, you have three opportunities to roll the dice to score the highest points from funky dice combinations (more info on these combinations in the game UI). After three rolls, mark your score or a zero on your scorecard in the corresponding column. You may stop after the first roll if satisfied with the outcome. The game continues until all 13 score categories have been filled.
 
+#### Scoring Combinations:
+
+![Rules for Aces-Sixes Scoring](https://i.imgur.com/tOLqp22.png)  
+![Rules for 3&4OfAKind, Full House, Straights, and Yahtzee](https://i.imgur.com/pHe5FXg.png)
+
 [Detailed game info here!](https://en.wikipedia.org/wiki/Yahtzee#Rules)
 
 ### Gameplay:
 
-Click [Yahtzee-JS!](https://yahtzee-js.surge.sh/) here to play the game!
+Click [Yahtzee-JS!](https://yahtzee-js.netlify.app/) here to play the game!
+
+7 color themes not including the default purple are available by clicking the cooresponding color in the "Yahtzee!" header!
 
 ### Motivation/Insipration:
 
@@ -42,5 +49,4 @@ Yahtzee has always been one of those games my family throws onto the table when 
 
 #### Goals:
 
-* Add ROYGBIV user-pickable color themes using every letter in the Yahtzee title
 * Add animations for dice rolling
