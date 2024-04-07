@@ -1,5 +1,5 @@
-let userRoll = [];
-let keepers = [];
+let userRoll = []
+let keepers = []
 let rollCount = 1
 let upperscore = 0
 let lowerscore = 0
@@ -8,14 +8,17 @@ let turn = 0
 let highscore
 
 //r ===============================================================================
-const redButtonEl = document.querySelector('#Y')
-const orangeButtonEl = document.querySelector('#a')
-const yellowButtonEl = document.querySelector('#h')
-const greenButtonEl = document.querySelector('#t')
-const blueButtonEl = document.querySelector('#z')
-const indigoButtonEl = document.querySelector('#e')
-const violetButtonEl = document.querySelector('#e2')
-const blackButtonEl = document.querySelector('#exclamation')
+
+// Might use later, I decided to mess with the styling a bit.
+
+// const redButtonEl = document.querySelector('#Y')
+// const orangeButtonEl = document.querySelector('#a')
+// const yellowButtonEl = document.querySelector('#h')
+// const greenButtonEl = document.querySelector('#t')
+// const blueButtonEl = document.querySelector('#z')
+// const indigoButtonEl = document.querySelector('#e')
+// const violetButtonEl = document.querySelector('#e2')
+// const blackButtonEl = document.querySelector('#exclamation')
 
 const diceDisplayEl = document.querySelectorAll('.dice-display')
 const keeperDisplayEl = document.querySelectorAll('.keeper-dice')
@@ -55,14 +58,16 @@ tempScoreNumberEls.forEach(score => {
 resetButtonEl.addEventListener('click', handleResetBtnClick)
 rollButtonEl.addEventListener('click', handleRollBtnClick)
 
-redButtonEl.addEventListener('click', handleThemeChanging)
-orangeButtonEl.addEventListener('click', handleThemeChanging)
-yellowButtonEl.addEventListener('click', handleThemeChanging)
-greenButtonEl.addEventListener('click', handleThemeChanging)
-blueButtonEl.addEventListener('click', handleThemeChanging)
-indigoButtonEl.addEventListener('click', handleThemeChanging)
-violetButtonEl.addEventListener('click', handleThemeChanging)
-blackButtonEl.addEventListener('click', handleThemeChanging)
+// Might use later, I decided to mess with the styling a bit.
+
+// redButtonEl.addEventListener('click', handleThemeChanging)
+// orangeButtonEl.addEventListener('click', handleThemeChanging)
+// yellowButtonEl.addEventListener('click', handleThemeChanging)
+// greenButtonEl.addEventListener('click', handleThemeChanging)
+// blueButtonEl.addEventListener('click', handleThemeChanging)
+// indigoButtonEl.addEventListener('click', handleThemeChanging)
+// violetButtonEl.addEventListener('click', handleThemeChanging)
+// blackButtonEl.addEventListener('click', handleThemeChanging)
 
 //y ===============================================================================
 
@@ -171,49 +176,51 @@ function handleResetBtnClick() {
   init()
 }
 
-function handleThemeChanging(event) {
-  if (event.target.id == 'Y') {
-    root.style.setProperty('--board-border','#4a2a2a')
-    root.style.setProperty('--board-background','#ffbfbf')
-    root.style.setProperty('--board-color','#d67a7a')
-  }
-  if (event.target.id == 'a') {
-    root.style.setProperty('--board-border','#4a3b2a')
-    root.style.setProperty('--board-color','#d6ab7a')
-    root.style.setProperty('--board-background','#ffe3bf')
-  }
-  if (event.target.id == 'h') {
-    root.style.setProperty('--board-border','#4a472a')
-    root.style.setProperty('--board-color','#d6d07a')
-    root.style.setProperty('--board-background','#fff9bf')
-  }
-  if (event.target.id == 't') {
-    root.style.setProperty('--board-border','#1b4332')
-    root.style.setProperty('--board-color','#40916c')
-    root.style.setProperty('--board-background','#b7e4c7')
-  }
-  if (event.target.id == 'z') {
-    root.style.setProperty('--board-border','#2a3b4a')
-    root.style.setProperty('--board-color','#7ab4d6')
-    root.style.setProperty('--board-background','#bfebff')
-  }
-  if (event.target.id == 'e') {
-    root.style.setProperty('--board-border','#402a4a')
-    root.style.setProperty('--board-color','#b97ad6')
-    root.style.setProperty('--board-background','#e8bfff')
-  }
-  if (event.target.id == 'e2') {
-    root.style.setProperty('--board-border','#4a2a43')
-    root.style.setProperty('--board-color','#d67ac7')
-    root.style.setProperty('--board-background','#ffbff4')
-  }
+// Might use later, I decided to mess with the styling a bit.
 
-  if (event.target.id == 'exclamation') {
-    root.style.setProperty('--board-border','#212227')
-    root.style.setProperty('--board-color','#8693AB')
-    root.style.setProperty('--board-background','#BDD4E7')
-  }
-}
+// function handleThemeChanging(event) {
+//   if (event.target.id == 'Y') {
+//     root.style.setProperty('--board-border','#4a2a2a')
+//     root.style.setProperty('--board-background','#ffbfbf')
+//     root.style.setProperty('--board-color','#d67a7a')
+//   }
+//   if (event.target.id == 'a') {
+//     root.style.setProperty('--board-border','#4a3b2a')
+//     root.style.setProperty('--board-color','#d6ab7a')
+//     root.style.setProperty('--board-background','#ffe3bf')
+//   }
+//   if (event.target.id == 'h') {
+//     root.style.setProperty('--board-border','#4a472a')
+//     root.style.setProperty('--board-color','#d6d07a')
+//     root.style.setProperty('--board-background','#fff9bf')
+//   }
+//   if (event.target.id == 't') {
+//     root.style.setProperty('--board-border','#1b4332')
+//     root.style.setProperty('--board-color','#40916c')
+//     root.style.setProperty('--board-background','#b7e4c7')
+//   }
+//   if (event.target.id == 'z') {
+//     root.style.setProperty('--board-border','#2a3b4a')
+//     root.style.setProperty('--board-color','#7ab4d6')
+//     root.style.setProperty('--board-background','#bfebff')
+//   }
+//   if (event.target.id == 'e') {
+//     root.style.setProperty('--board-border','#402a4a')
+//     root.style.setProperty('--board-color','#b97ad6')
+//     root.style.setProperty('--board-background','#e8bfff')
+//   }
+//   if (event.target.id == 'e2') {
+//     root.style.setProperty('--board-border','#4a2a43')
+//     root.style.setProperty('--board-color','#d67ac7')
+//     root.style.setProperty('--board-background','#ffbff4')
+//   }
+
+//   if (event.target.id == 'exclamation') {
+//     root.style.setProperty('--board-border','#212227')
+//     root.style.setProperty('--board-color','#8693AB')
+//     root.style.setProperty('--board-background','#BDD4E7')
+//   }
+// }
 
 //g ===============================================================================
 
@@ -259,8 +266,8 @@ updateDisplays = () => {
     else keeperDisplay.style.boxShadow = '0px 0px'
   })
   rollCountEl.textContent = `Roll Count: ${rollCount}`
-  if (rollCount < 3) rollCountEl.style.backgroundColor = 'var(--cool-green)'
-  else rollCountEl.style.backgroundColor = 'var(--cool-red)'
+  if (rollCount < 3) rollCountEl.style.color = 'var(--cool-green)'
+  else rollCountEl.style.color = 'var(--cool-red)'
 }
 
 doScoreStuff = () => {
