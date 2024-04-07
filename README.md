@@ -1,4 +1,4 @@
-![Game Image](https://i.imgur.com/wlsLrOw.png)
+![Game Image](https://i.imgur.com/Uo1vTcw.png)
 
 # **Yahtzee!**
 
@@ -20,8 +20,6 @@ After a specific combination is surrounded in green, you can score that combinat
 ### Gameplay:
 
 Click [Yahtzee-JS!](https://yahtzee-js.netlify.app/) here to play the game!
-
-7 color themes not including the default purple are available by clicking the cooresponding color in the "Yahtzee!" header!
 
 ### Motivation/Insipration:
 
