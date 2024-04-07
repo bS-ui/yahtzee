@@ -456,9 +456,11 @@ checkForScore = () => {
   }
   //r set styling for scoreboard if player can score chance
   if (scoreNumberEls[12].style.borderColor == 'var(--cool-red)' && actualNumTotal != 0) {
+    scoreTextEls[12].style.borderColor = 'var(--cool-green)'
     tempScoreNumberEls[12].style.borderColor = 'var(--cool-green)'
     tempScoreNumberEls[12].textContent = actualNumTotal
   } else {
+    scoreTextEls[12].style.borderColor = 'var(--cool-red)'
     tempScoreNumberEls[12].style.borderColor = 'var(--cool-red)'
     tempScoreNumberEls[12].textContent = 0
   }
