@@ -25,6 +25,8 @@ Click [Yahtzee-JS!](https://yahtzee-js.netlify.app/) here to play the game!
 
 Yahtzee has always been one of those games my family throws onto the table when we have a gathering and it's a blast every time. Besides the game being just genuinely enjoyable to play and see those scores add up at the end of the game, I thought it would be a good test of my current programming skills to see if I can properly implement all of the funky scoring combinations and rules Yahtzee has to offer! 
 
+[Planning Materials](https://docs.google.com/document/d/1glSz4t9pdkbVcxpltfByQGSIM5IhtQy9TQTwn6vxgtg/edit?usp=sharing)
+
 ### Technologies Used:
 
 * HTML

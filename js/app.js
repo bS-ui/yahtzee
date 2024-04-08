@@ -60,14 +60,14 @@ rollButtonEl.addEventListener('click', handleRollBtnClick)
 
 // Might use later, I decided to mess with the styling a bit.
 
-// redButtonEl.addEventListener('click', handleThemeChanging)
-// orangeButtonEl.addEventListener('click', handleThemeChanging)
-// yellowButtonEl.addEventListener('click', handleThemeChanging)
-// greenButtonEl.addEventListener('click', handleThemeChanging)
-// blueButtonEl.addEventListener('click', handleThemeChanging)
-// indigoButtonEl.addEventListener('click', handleThemeChanging)
-// violetButtonEl.addEventListener('click', handleThemeChanging)
-// blackButtonEl.addEventListener('click', handleThemeChanging)
+//o redButtonEl.addEventListener('click', handleThemeChanging)
+//o orangeButtonEl.addEventListener('click', handleThemeChanging)
+//o yellowButtonEl.addEventListener('click', handleThemeChanging)
+//o greenButtonEl.addEventListener('click', handleThemeChanging)
+//o blueButtonEl.addEventListener('click', handleThemeChanging)
+//o indigoButtonEl.addEventListener('click', handleThemeChanging)
+//o violetButtonEl.addEventListener('click', handleThemeChanging)
+//o blackButtonEl.addEventListener('click', handleThemeChanging)
 
 //y ===============================================================================
 
